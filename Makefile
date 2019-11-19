@@ -10,6 +10,7 @@ NAME	=	bsq
 SRC	=	main.c\
 		load_map_from_file.c\
 		mem_alloc_arrays.c\
+		map.c\
 		map_initializing.c
 
 OBJ	=	$(SRC:.c=.o)
@@ -18,7 +19,12 @@ NAME_TESTS = 	tests_bsq
 
 SRC_TESTS =	load_map_from_file.c\
 			mem_alloc_arrays.c\
-			map_initializing.c
+			map_initializing.c\
+			map.c\
+			tests/test_load_map_from_file.c\
+			tests/test_get_number_from_line.c\
+			tests/test_get_columns_nb_from_file.c\
+			tests/test_set_map_dimensions.c
 
 OBJ_TESTS	=	$(SRC_TESTS:.c=.o)
 

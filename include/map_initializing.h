@@ -9,9 +9,10 @@
 #define DEF_MAP_INITIALIZING
 
 #include <unistd.h>
+#include <fcntl.h>
 #include "map.h"
 
-int set_map_dimensions(char *filepath, map_t map);
+int set_map_dimensions(char *filepath, map_t *map);
 int get_number_from_line(int file_descr, int *nbr);
 int get_columns_nb_from_file(int file_descr, int *nbr);
 int copy_file_in_map(int file_descr, map_t map);

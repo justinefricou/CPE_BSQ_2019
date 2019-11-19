@@ -7,23 +7,23 @@
 
 #include "include/map_initializing.h"
 
-int set_map_dimensions(char *filepath, map_t map)
+int set_map_dimensions(char *filepath, map_t *map)
 {
-    int file_descr = 0;
+    int file_desc = 0;
 
-    map.rows = 0;
-    map.cols = 0;
-    file_descr = open(filepath, O_RDONLY);
-    if (file_descr == -1)
+    map->rows = 0;
+    map->cols = 0;
+    file_desc = open(filepath, O_RDONLY);
+    if (file_desc == -1)
         return (84);
-    if (get_number_from_line(file_descr, &(map.rows)) == 84 || maps.rows == 0) {
-        close(file_descr);
+    if (get_number_from_line(file_desc, &(map->rows)) == 84 || map->rows == 0) {
+        close(file_desc);
         return (84);
-    } else if (get_columns_nb_from_file(file_descr, &(map.cols)) == 84) {
-        close(file_descr);
+    } else if (get_columns_nb_from_file(file_desc, &(map->cols)) == 84) {
+        close(file_desc);
         return (84);
     }
-    close(file_descr);
+    close(file_desc);
     return (0);
 }
 
@@ -52,11 +52,11 @@ int get_columns_nb_from_file(int file_descr, int *nbr)
     int size_read = 1;
     char buffer[2] = {0};
 
-    for ( ; size_read > 0; ) {
+    for ( ; size_read > 0 && buffer[0] != '\n'; ) {
         size_read = read(file_descr, buffer, 1);
-        if (size_read == -1 || (size_read == 0 && buffer[0] != '\n'))
+        if (size_read == -1)
             return (84);
-        if (size_read != 0 && buffer[0] == '\n')
+        if (size_read > 0 && buffer[0] != '\n')
             (*nbr)++;
     }
     return (0);
