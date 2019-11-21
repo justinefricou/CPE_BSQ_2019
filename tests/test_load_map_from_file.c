@@ -17,7 +17,7 @@ Test(test_load_map_from_file, single_character_in_file)
     map = malloc(sizeof(map_t));
     str[0][0] = '.';
     cr_expect_eq(load_map_from_file("tests/single_character_file.txt", map), 0);
-    cr_expect_arr_eq((map->array)[0], str[0], 1, "actual : %s",(map->array)[0]);
+    cr_expect_arr_eq((map->array)[0], str[0], 1);
     free_map(map);
 }
 

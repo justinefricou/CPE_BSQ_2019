@@ -16,7 +16,7 @@ int main(int ac, char **av)
     map = malloc(sizeof(map_t));
     if (map == NULL)
         return (84);
-    if (detect_error_in_file(av[1]) == 84) {
+    if (detect_error_in_file(av[1]) == 84) { // TODO
         free(map);
         return (84);
     } else if (load_map_from_file(av[1], *map) == 84)
