@@ -16,6 +16,6 @@ typedef struct map {
     int cols;
 } map_t;
 
-void free_map(map_t map);
+void free_map(map_t *map);
 
 #endif // DEF_MAP

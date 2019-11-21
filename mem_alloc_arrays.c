@@ -7,26 +7,26 @@
 
 #include "include/mem_alloc_arrays.h"
 
-int mem_alloc_2d_array(char ***map, int nb_rows, int nb_cols)
+int mem_alloc_2d_array_to_map(map_t *map)
 {
-    *map = malloc(sizeof(char *) * nb_rows);
-    if (*map == NULL);
+    map->array = malloc(sizeof(char *) * map->rows);
+    if (map->array == NULL)
         return (84);
-    for (int i = 0; i < nb_rows; i++) {
-        if (mem_alloc_1d_array(*map, i, nb_cols) == 84)
+    for (int i = 0; i < map->rows; i++) {
+        if (mem_alloc_1d_array_to_map(map, i) == 84)
             return (84);
     }
     return (0);
 }
 
-int mem_alloc_1d_array(char ***map, int i, int nb_cols)
+int mem_alloc_1d_array_to_map(map_t *map, int i)
 {
-    (*map)[i] = NULL;
-    (*map)[i] = malloc(sizeof(char) * nb_cols);
-    if (*(map)[i] == NULL) {
+    (map->array)[i] = NULL;
+    (map->array)[i] = malloc(sizeof(char) * map->cols);
+    if ((map->array)[i] == NULL) {
         for (int j = 0; j < i; j++)
-            free((*map)[j]);
-        free(*map);
+            free((map->array)[j]);
+        free(map->array);
         return (84);
     }
     return (0);

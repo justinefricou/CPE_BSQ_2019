@@ -62,32 +62,35 @@ int get_columns_nb_from_file(int file_descr, int *nbr)
     return (0);
 }
 
-int copy_file_in_map(int file_descr, map_t map)
+int copy_file_in_map(int fd, map_t *map)
 {
-    int size_read = 1;
+    int s_read = 1;
     char buffer[2] = {0};
 
-    for (int i = 0; i < map.rows && size_read == 1; i++) {
-        if (copy_line_in_arr(file_descr, map, map.array[i], &size_read) == 84) {
-            close(file_descr);
+    for ( ; buffer[0] != '\n'; ) {
+        s_read = read(fd, buffer, 1);
+        if (s_read == -1)
             return (84);
-        }
-        size_read = read(file_descr, buffer, 1);
-        if (size_read == -1)
+    }
+    for (int i = 0; i < map->rows && s_read == 1; i++) {
+        if (copy_line_in_arr(fd, map->cols, (map->array)[i], &s_read) == 84)
+            return (84);
+        s_read = read(fd, buffer, 1);
+        if (s_read == -1)
             return (84);
         buffer[0] = 0;
     }
     return (0);
 }
 
-int copy_line_in_arr(int file_descr, map_t map, char *line, int *size_read)
+int copy_line_in_arr(int file_descr, int nb_cols, char *line, int *size_read)
 {
     char buffer[2] = {0};
-
-    for (int i = 0; i < map.cols && *size_read == 1; i++) {
+    for (int i = 0; i < nb_cols && *size_read == 1; i++) {
         *size_read = read(file_descr, buffer, 1);
         if (*size_read == -1)
             return (84);
         line[i] = buffer[0];
     }
+    return (0);
 }

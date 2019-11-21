@@ -7,9 +7,10 @@
 
 #include "include/map.h"
 
-void free_map(map_t map)
+void free_map(map_t *map)
 {
-    for (int i = 0; i < map.cols; i++)
-        free(map.array[i]);
-    free(map.array);
+    for (int i = 0; i < map->rows; i++)
+        free(map->array[i]);
+    free(map->array);
+    free(map);
 }

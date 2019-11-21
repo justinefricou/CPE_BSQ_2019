@@ -14,6 +14,6 @@
 #include "map_initializing.h"
 #include "mem_alloc_arrays.h"
 
-int load_map_from_file(char *filepath, map_t map);
+int load_map_from_file(char *filepath, map_t *map);
 
 #endif // DEF_LOAD_MAP_FROM_FILE

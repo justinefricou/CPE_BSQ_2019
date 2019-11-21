@@ -7,14 +7,14 @@
 
 #include "include/load_map_from_file.h"
 
-int load_map_from_file(char *filepath, map_t map)
+int load_map_from_file(char *filepath, map_t *map)
 {
     int file_descr = 0;
 
-    map.array = NULL;
-    if (set_map_dimensions(filepath, &map) == 84 || map.rows == 0)
+    map->array = NULL;
+    if (set_map_dimensions(filepath, map) == 84 || map->rows == 0)
         return (84);
-    if (mem_alloc_2d_array(&(map.array), map.rows, map.cols) == 84)
+    if (mem_alloc_2d_array_to_map(map) == 84)
         return (84);
     file_descr = open(filepath, O_RDONLY);
     if (file_descr == -1)

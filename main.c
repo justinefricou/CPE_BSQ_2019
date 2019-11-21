@@ -9,13 +9,17 @@
 
 int main(int ac, char **av)
 {
-    map_t map;
+    map_t *map = NULL;
 
     if (ac != 2)
         return (84);
-    if (detect_error_in_file(av[1]) == 84)
+    map = malloc(sizeof(map_t));
+    if (map == NULL)
         return (84);
-    if (load_map_from_file(av[1], map) == 84)
+    if (detect_error_in_file(av[1]) == 84) {
+        free(map);
+        return (84);
+    } else if (load_map_from_file(av[1], *map) == 84)
         return (84);
     find_biggest_square(/* TODO */);
     display_result(/* TODO */);

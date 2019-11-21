@@ -9,8 +9,9 @@
 #define DEF_MEM_ALLOC_ARRAYS
 
 #include <stdlib.h>
+#include "map.h"
 
-int mem_alloc_2d_array(char ***map, int nb_rows, int nb_cols);
-int mem_alloc_1d_array(char ***map, int i, int nb_cols);
+int mem_alloc_2d_array_to_map(map_t *map);
+int mem_alloc_1d_array_to_map(map_t *map, int i);
 
 #endif // DEF_MEM_ALLOC_ARRAYS
