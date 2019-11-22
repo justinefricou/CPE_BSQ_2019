@@ -11,7 +11,8 @@ SRC	=	main.c\
 		load_map_from_file.c\
 		mem_alloc_arrays.c\
 		map.c\
-		map_initializing.c
+		map_initializing.c\
+		find_biggest_square.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -21,6 +22,7 @@ SRC_TESTS =	load_map_from_file.c\
 			mem_alloc_arrays.c\
 			map_initializing.c\
 			map.c\
+			find_biggest_square.c\
 			tests/test_load_map_from_file.c\
 			tests/test_get_number_from_line.c\
 			tests/test_get_columns_nb_from_file.c\
