@@ -12,6 +12,7 @@
 #include "map_initializing.h"
 #include "mem_alloc_arrays.h"
 #include "find_biggest_square.h"
+#include "display_result.h"
 #include "map.h"
 #include "square.h"
 

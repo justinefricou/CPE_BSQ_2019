@@ -9,12 +9,7 @@
 
 int detect_error_in_file(char *filepath)
 {
-    // TODO
-}
 
-void display_result()
-{
-    // TODO
 }
 
 int main(int ac, char **av)
@@ -22,7 +17,7 @@ int main(int ac, char **av)
     map_t *map = NULL;
     square biggest_square = {-1, -1, 0};
 
-    if (ac != 2 || detect_error_in_file(av[1]) == 84) // TODO
+    if (ac != 2 || detect_error_in_file(av[1]) == 84)
         return (84);
     map = malloc(sizeof(map_t));
     if (map == NULL)
@@ -35,7 +30,7 @@ int main(int ac, char **av)
         free_map(map);
         return (84);
     }
-    display_result(/* TODO */);
+    display_result(map, &biggest_square);
     free_map(map);
     return (0);
 }
