@@ -30,6 +30,8 @@ SRC_TESTS =	load_map_from_file.c\
 			tests/test_get_columns_nb_from_file.c\
 			tests/test_set_map_dimensions.c\
 			tests/test_copy_line_in_arr.c\
+			tests/test_is_line.c\
+			tests/test_is_square_of_size.c
 
 
 OBJ_TESTS	=	$(SRC_TESTS:.c=.o)
