@@ -8,6 +8,7 @@
 NAME	=	bsq
 
 SRC	=	main.c\
+		error_detection.c\
 		load_map_from_file.c\
 		mem_alloc_arrays.c\
 		map.c\
@@ -19,12 +20,14 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME_TESTS = 	tests_bsq
 
-SRC_TESTS =	load_map_from_file.c\
+SRC_TESTS =	error_detection.c\
+			load_map_from_file.c\
 			mem_alloc_arrays.c\
 			map_initializing.c\
 			map.c\
 			find_biggest_square.c\
 			display_result.c\
+			tests/test_check_first_line.c\
 			tests/test_load_map_from_file.c\
 			tests/test_get_number_from_line.c\
 			tests/test_get_columns_nb_from_file.c\

@@ -7,11 +7,6 @@
 
 #include "include/main.h"
 
-int detect_error_in_file(char *filepath)
-{
-
-}
-
 int main(int ac, char **av)
 {
     map_t *map = NULL;

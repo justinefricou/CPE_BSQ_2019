@@ -16,7 +16,7 @@ int set_map_dimensions(char *filepath, map_t *map)
     file_desc = open(filepath, O_RDONLY);
     if (file_desc == -1)
         return (84);
-    if (get_number_from_line(file_desc, &(map->rows)) == 84 || map->rows == 0) {
+    if (get_number_from_line(file_desc, &(map->rows)) == 84 || map->rows <= 0) {
         close(file_desc);
         return (84);
     } else if (get_columns_nb_from_file(file_desc, &(map->cols)) == 84) {

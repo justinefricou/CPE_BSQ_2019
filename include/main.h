@@ -8,6 +8,7 @@
 #ifndef DEF_MAIN
 #define DEF_MAIN
 
+#include "error_detection.h"
 #include "load_map_from_file.h"
 #include "map_initializing.h"
 #include "mem_alloc_arrays.h"
