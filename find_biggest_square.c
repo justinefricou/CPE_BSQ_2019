@@ -27,10 +27,13 @@ void get_bsq_from_location(map_t *map, int row, int col, square *biggest_sqr)
 
 int is_square_of_size(map_t *map, int row, int col, int size)
 {
-    for ( ; row < map->rows; row++) {
+    int i = 0;
+    for ( ; row < map->rows && i < size; row++, i++) {
         if (!is_line(size, &(((map->array)[row])[col]), map->cols - col - 1))
             return (0);
     }
+    if (i != size)
+        return (0);
     return (1);
 }
 
