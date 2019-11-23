@@ -28,6 +28,7 @@ SRC_TESTS =	error_detection.c\
 			find_biggest_square.c\
 			display_result.c\
 			tests/test_check_first_line.c\
+			tests/test_check_map.c\
 			tests/test_load_map_from_file.c\
 			tests/test_get_number_from_line.c\
 			tests/test_get_columns_nb_from_file.c\

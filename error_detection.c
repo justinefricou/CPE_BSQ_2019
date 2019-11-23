@@ -68,15 +68,15 @@ int is_digit(char c)
     return (0);
 }
 
-int handle_lines_sizes(int *size_curr_line, int *size_last_line, char buffer)
+int handle_lines_sizes(int *curr_size, int *last_size, char buffer)
 {
     if (buffer == '\n') {
-        if (*size_last_line == 0 && *size_curr_line == 0)
+        if (*last_size == 0 && *curr_size == 0)
             return (84);
-        else if ((*size_last_line != *size_curr_line) && *size_last_line != 0)
+        if (*last_size != *curr_size && *last_size != 0 && *curr_size != 0)
             return (84);
-        *size_last_line = *size_curr_line;
-        *size_curr_line = 0;
+        *last_size = *curr_size;
+        *curr_size = 0;
     } else
-        (*size_curr_line)++;
+        (*curr_size)++;
 }
