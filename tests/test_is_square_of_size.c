@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include "../include/find_biggest_square.h"
 
-Test(is_square_of_size, normal_case)
+Test(is_square_of_size, small_map_case)
 {
     map_t map;
 
@@ -52,10 +52,44 @@ Test(is_square_of_size, single_character_in_map)
 
 Test(is_square_of_size, single_column_in_map)
 {
+    map_t map;
 
+    map.rows = 6;
+    map.cols = 1;
+    map.array = malloc(sizeof(char *) * 6);
+    for (int i = 0; i < 6; i++) {
+        (map.array)[i] = malloc(sizeof(char));
+        (map.array)[i][0] = '.';
+    }
+    (map.array)[2][0] = 'o';
+    cr_expect_eq(is_square_of_size(&map, 0, 0, 1), 1);
+    cr_expect_eq(is_square_of_size(&map, 0, 0, 2), 0);
+    cr_expect_eq(is_square_of_size(&map, 1, 0, 1), 1);
+    cr_expect_eq(is_square_of_size(&map, 2, 0, 1), 0);
+    cr_expect_eq(is_square_of_size(&map, 3, 0, 1), 1);
+    cr_expect_eq(is_square_of_size(&map, 3, 0, 2), 0);
+    for (int i = 0; i < 6; i++)
+        free((map.array)[i]);
+    free(map.array);
 }
 
 Test(is_square_of_size, single_line_in_map)
 {
+    map_t map;
 
+    map.rows = 1;
+    map.cols = 6;
+    map.array = malloc(sizeof(char *));
+    (map.array)[0] = malloc(sizeof(char) * 6);
+    for (int j = 0; j < 6; j++)
+        (map.array)[0][j] = '.';
+    (map.array)[0][2] = 'o';
+    cr_expect_eq(is_square_of_size(&map, 0, 0, 1), 1);
+    cr_expect_eq(is_square_of_size(&map, 0, 0, 2), 0);
+    cr_expect_eq(is_square_of_size(&map, 0, 1, 1), 1);
+    cr_expect_eq(is_square_of_size(&map, 0, 1, 2), 0);
+    cr_expect_eq(is_square_of_size(&map, 0, 2, 1), 0);
+    cr_expect_eq(is_square_of_size(&map, 0, 3, 1), 1);
+    free((map.array)[0]);
+    free(map.array);
 }
