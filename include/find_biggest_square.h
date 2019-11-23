@@ -14,6 +14,6 @@
 int find_biggest_square_in_map(map_t *map, square *biggest_square);
 void get_bsq_from_location(map_t *map, int row, int col, square *biggest_sqr);
 int is_square_of_size(map_t *map, int row, int col, int size);
-int is_line_of_size(int size, char *line, int line_length);
+int is_line(int size, char *line, int line_length);
 
 #endif // DEF_FIND_BIGGEST_SQUARE

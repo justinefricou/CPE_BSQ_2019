@@ -12,6 +12,7 @@ void display_result(map_t *map, square *biggest_square)
     for (int i = 0; i < map->rows; i++) {
         for (int j = 0; j < map->cols; j++)
             display_character(map, i, j, biggest_square);
+        my_putchar('\n');
     }
 }
 
