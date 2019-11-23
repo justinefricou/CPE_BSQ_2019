@@ -34,7 +34,20 @@ Test(is_square_of_size, normal_case)
 
 Test(is_square_of_size, single_character_in_map)
 {
+    map_t map;
 
+    map.rows = 1;
+    map.cols = 1;
+    map.array = malloc(sizeof(char *));
+    (map.array)[0] = malloc(sizeof(char));
+    (map.array)[0][0] = '.';
+    cr_expect_eq(is_square_of_size(&map, 0, 0, 1), 1);
+    cr_expect_eq(is_square_of_size(&map, 0, 0, 3), 0);
+    (map.array)[0][0] = 'o';
+    cr_expect_eq(is_square_of_size(&map, 0, 0, 1), 0);
+    cr_expect_eq(is_square_of_size(&map, 0, 0, 3), 0);
+    free((map.array)[0]);
+    free(map.array);
 }
 
 Test(is_square_of_size, single_column_in_map)

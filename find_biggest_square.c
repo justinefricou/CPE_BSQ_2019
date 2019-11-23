@@ -21,8 +21,15 @@ int find_biggest_square_in_map(map_t *map, square *biggest_square)
 
 void get_bsq_from_location(map_t *map, int row, int col, square *biggest_sqr)
 {
-    while (is_square_of_size(map, row, col, biggest_sqr->size + 1))
-        (biggest_sqr->size)++;
+    int biggest_size = biggest_sqr->size;
+
+    while (is_square_of_size(map, row, col, biggest_size + 1))
+        biggest_size++;
+    if (biggest_size > biggest_sqr->size) {
+        biggest_sqr->size = biggest_size;
+        biggest_sqr->x = row;
+        biggest_sqr->y = col;
+    }
 }
 
 int is_square_of_size(map_t *map, int row, int col, int size)
