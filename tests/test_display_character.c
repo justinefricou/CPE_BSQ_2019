@@ -25,7 +25,7 @@ Test(display_character, without_obstacles, .init = cr_redirect_stdout)
     display_character(&map, 0, 0, &biggest_square);
     free((map.array)[0]);
     free(map.array);
-    cr_expect_stdout_eq_str("X.");
+    cr_expect_stdout_eq_str("x.");
 }
 
 Test(display_character, with_obstacles, .init = cr_redirect_stdout)

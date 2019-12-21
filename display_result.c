@@ -20,7 +20,7 @@ void display_character(map_t *map, int row, int col, square *biggest_sqr)
 {
     if (biggest_sqr->x <= row && row < biggest_sqr->x + biggest_sqr->size) {
         if (biggest_sqr->y <= col && col < biggest_sqr->y + biggest_sqr->size)
-            my_putchar('X');
+            my_putchar('x');
         else
             my_putchar((map->array)[row][col]);
     } else
