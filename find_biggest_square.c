@@ -14,8 +14,6 @@ int find_biggest_square_in_map(map_t *map, square *biggest_square)
             get_bsq_from_location(map, i, j, biggest_square);
         }
     }
-    if (biggest_square->size == 0)
-        return (84);
     return (0);
 }
 
