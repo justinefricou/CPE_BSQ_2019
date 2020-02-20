@@ -41,10 +41,12 @@ SRC_TESTS =	source/error_detection.c\
 
 OBJ_TESTS	=	$(SRC_TESTS:.c=.o)
 
+CFLAGS	+=	-Wall -Wextra -I./
+
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-			gcc -o $(NAME) $(OBJ)
+			gcc -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean:
 		rm -f $(OBJ)
@@ -59,5 +61,5 @@ fclean: clean
 re:	fclean all
 
 tests_run: 	$(SRC_TESTS)
-			gcc -o $(NAME_TESTS) $(SRC_TESTS) --coverage -lcriterion
+			gcc -o $(NAME_TESTS) $(SRC_TESTS) $(CFLAGS) --coverage -lcriterion
 			./$(NAME_TESTS)

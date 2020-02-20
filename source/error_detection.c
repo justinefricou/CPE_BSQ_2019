@@ -79,4 +79,5 @@ int handle_lines_sizes(int *curr_size, int *last_size, char buffer)
         *curr_size = 0;
     } else
         (*curr_size)++;
+    return (0);
 }
