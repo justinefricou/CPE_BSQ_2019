@@ -5,7 +5,7 @@
 ** Functions allocating memory for arrays.
 */
 
-#include "include/mem_alloc_arrays.h"
+#include "mem_alloc_arrays.h"
 
 int mem_alloc_2d_array_to_map(map_t *map)
 {

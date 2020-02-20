@@ -5,7 +5,7 @@
 ** Functions used to detect errors in the file.
 */
 
-#include "include/error_detection.h"
+#include "error_detection.h"
 
 int detect_error_in_file(char *filepath)
 {

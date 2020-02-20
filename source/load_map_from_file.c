@@ -5,7 +5,7 @@
 ** Loads the rectangle in the file (param) in a 2d-array.
 */
 
-#include "include/load_map_from_file.h"
+#include "load_map_from_file.h"
 
 int load_map_from_file(char *filepath, map_t *map)
 {

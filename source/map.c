@@ -5,7 +5,7 @@
 ** Functions to work with maps.
 */
 
-#include "include/map.h"
+#include "map.h"
 
 void free_map(map_t *map)
 {

@@ -5,7 +5,7 @@
 ** Functions to initialize a map's array, width and height.
 */
 
-#include "include/map_initializing.h"
+#include "map_initializing.h"
 
 int set_map_dimensions(char *filepath, map_t *map)
 {

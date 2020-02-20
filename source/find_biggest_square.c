@@ -5,7 +5,7 @@
 ** Find the largest square on a map while avoiding obstacles.
 */
 
-#include "include/find_biggest_square.h"
+#include "find_biggest_square.h"
 
 int find_biggest_square_in_map(map_t *map, square *biggest_square)
 {

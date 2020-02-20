@@ -5,7 +5,7 @@
 ** Displays the map with 'X's where the biggest square is located.
 */
 
-#include "include/display_result.h"
+#include "display_result.h"
 
 void display_result(map_t *map, square *biggest_square)
 {

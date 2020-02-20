@@ -5,7 +5,7 @@
 ** main function : find the largest square on a map while avoiding obstacles.
 */
 
-#include "include/main.h"
+#include "main.h"
 
 int main(int ac, char **av)
 {
