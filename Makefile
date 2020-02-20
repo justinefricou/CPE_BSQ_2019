@@ -41,7 +41,7 @@ SRC_TESTS =	source/error_detection.c\
 
 OBJ_TESTS	=	$(SRC_TESTS:.c=.o)
 
-CFLAGS	+=	-Wall -Wextra -I./
+CFLAGS	+=	-Wall -Wextra -Iinclude
 
 all:	$(NAME)
 

@@ -47,13 +47,10 @@ Test(copy_line_in_arr, several_characters_in_line)
 Test(copy_line_in_arr, failed_read)
 {
     int file_descr = 0;
-    char expected_str[20];
     char actual_str[20] = {0};
     char buffer[2] = {0};
     int size_read = 0;
 
-    for (int i = 0; i < 20; i++)
-        expected_str[i] = '.';
     file_descr = open("tests/big_map_file.txt", O_RDONLY);
     for ( ; buffer[0] != '\n'; ) {
         read(file_descr, buffer, 1);
