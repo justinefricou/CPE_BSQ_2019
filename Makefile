@@ -2,31 +2,31 @@
 ## EPITECH PROJECT, 2019
 ## Makefile
 ## File description:
-## A Makefile that compiles cat
+## A Makefile to compile bsq
 ##
 
 NAME	=	bsq
 
-SRC	=	main.c\
-		error_detection.c\
-		load_map_from_file.c\
-		mem_alloc_arrays.c\
-		map.c\
-		map_initializing.c\
-		find_biggest_square.c\
-		display_result.c
+SRC	=	source/main.c\
+		source/error_detection.c\
+		source/load_map_from_file.c\
+		source/mem_alloc_arrays.c\
+		source/map.c\
+		source/map_initializing.c\
+		source/find_biggest_square.c\
+		source/display_result.c
 
 OBJ	=	$(SRC:.c=.o)
 
 NAME_TESTS = 	tests_bsq
 
-SRC_TESTS =	error_detection.c\
-			load_map_from_file.c\
-			mem_alloc_arrays.c\
-			map_initializing.c\
-			map.c\
-			find_biggest_square.c\
-			display_result.c\
+SRC_TESTS =	source/error_detection.c\
+			source/load_map_from_file.c\
+			source/mem_alloc_arrays.c\
+			source/map_initializing.c\
+			source/map.c\
+			source/find_biggest_square.c\
+			source/display_result.c\
 			tests/test_check_first_line.c\
 			tests/test_check_map.c\
 			tests/test_load_map_from_file.c\
