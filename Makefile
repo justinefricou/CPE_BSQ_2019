@@ -51,12 +51,12 @@ $(NAME):	$(OBJ)
 clean:
 		rm -f $(OBJ)
 		rm -f $(OBJ_TESTS)
-		rm -f *.gcno
-		rm -f *.gcda
 
 fclean: clean
 		rm -f $(NAME)
 		rm -f $(NAME_TESTS)
+		rm -f *.gcno
+		rm -f *.gcda
 
 re:	fclean all
 
